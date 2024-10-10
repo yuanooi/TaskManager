@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        @include('layout.header')
+        @include('layouts.header')
     </header>
 
     <main>
@@ -15,7 +15,7 @@
     </main>
 
     <footer>
-        @include('layout.footer')
+        @include('layouts.footer')
     </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
