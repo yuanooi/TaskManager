@@ -18,3 +18,11 @@ Route::get('/',[TaskController::class,'fetchAllTasks'])->name('index');
 Route::get('/create',[TaskController::class,'createTask'])->name('create');
 
 Route::post('/addTask',[TaskController::class,'addTask'])->name('addTask');
+
+Route::get('/done/{id}',[TaskController::class,'doneTask'])->name('done');
+
+Route::get('edit/{id}',[TaskController::class,'editTask'])->name('edit');
+
+Route::put('updateTask/{id}',[TaskController::class,'updateTask'])->name('updateTask');
+
+Route::delete('delete/{id}',[TaskController::class,'deleteTask'])->name('delete');

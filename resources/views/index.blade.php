@@ -25,6 +25,19 @@
                     @endif
                     </td>
                     <td>{{ $task->due_date }}</td>
+                    <td>
+                        @if($task->is_completed == 0)
+                        <a href="{{ route('done', $task->id) }}" class="btn btn-success">Mark as Completed</a>
+                        @endif
+                    </td>
+                    <td><a href="{{ route('edit', $task->id) }}" class="btn btn-primary">Edit</a></td>
+                    <td>
+                        <form action="{{ route('delete', $task->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type='submit' onclick="Are you sure you want to delete this task?" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
              @endforeach
         </table>
